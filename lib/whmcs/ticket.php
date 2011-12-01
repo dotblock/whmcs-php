@@ -228,7 +228,7 @@ class WHMCS_Ticket extends WHMCS_Base {
    */
 
   public static function get_ticket_predefined_repies($params = array()) {
-    $params['action'] = 'getsupportstatuses';
+    $params['action'] = 'getticketpredefinedreplies';
     return self::send_request($params);
   }
 
