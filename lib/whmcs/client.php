@@ -246,7 +246,7 @@ class WHMCS_Client extends WHMCS_Base {
    *
    * Parameters:
    *
-   * contactid - The ID of the contact to delete
+   * contactid - The ID of the contact to update
    * generalemails - set to true to receive general emails
    * productemails - set to true to receive product emails
    * domainemails - set to true to receive domain emails
