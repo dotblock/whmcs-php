@@ -1,16 +1,16 @@
 <?php
 
 /**
- * WHMCS API
+ * Ticket class for managing support tickets
  *
+ * @package   WHMCS
  * @author    Joshua Priddle <jpriddle@nevercraft.net>
  * @version   v0.0.1
  * @copyright 2011 DotBlock Inc
  */
 
-class WHMCS_Ticket extends WHMCS_Base {
-
-  // --------------------------------------------------------------------
+class WHMCS_Ticket extends WHMCS_Base
+{
 
   /**
    * Open a new ticket
@@ -37,8 +37,6 @@ class WHMCS_Ticket extends WHMCS_Base {
     return self::send_request($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Reply to ticket
    *
@@ -62,8 +60,6 @@ class WHMCS_Ticket extends WHMCS_Base {
     return self::send_request($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Get tickets
    *
@@ -86,8 +82,6 @@ class WHMCS_Ticket extends WHMCS_Base {
     return self::send_request($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Get a ticket
    *
@@ -104,8 +98,6 @@ class WHMCS_Ticket extends WHMCS_Base {
     $params['action'] = 'getticket';
     return self::send_request($params);
   }
-
-  // --------------------------------------------------------------------
 
   /**
    * Update an existing ticket
@@ -127,8 +119,6 @@ class WHMCS_Ticket extends WHMCS_Base {
     return self::send_request($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Add a note to an existing ticket
    *
@@ -147,8 +137,6 @@ class WHMCS_Ticket extends WHMCS_Base {
     return self::send_request($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Delete an existing ticket
    *
@@ -166,8 +154,6 @@ class WHMCS_Ticket extends WHMCS_Base {
     return self::send_request($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Get support departments
    *
@@ -179,8 +165,6 @@ class WHMCS_Ticket extends WHMCS_Base {
   public static function get_support_departments() {
     return self::send_request(array('action' => 'getsupportdepartments'));
   }
-
-  // --------------------------------------------------------------------
 
   /**
    * Get support statuses
@@ -199,8 +183,6 @@ class WHMCS_Ticket extends WHMCS_Base {
     return self::send_request($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Get ticket predefined categories
    *
@@ -212,8 +194,6 @@ class WHMCS_Ticket extends WHMCS_Base {
   public static function get_ticket_predefined_cats() {
     return self::send_request(array('action' => 'getticketpredefinedcats'));
   }
-
-  // --------------------------------------------------------------------
 
   /**
    * Get ticket predefined replies
@@ -231,8 +211,6 @@ class WHMCS_Ticket extends WHMCS_Base {
     $params['action'] = 'getticketpredefinedreplies';
     return self::send_request($params);
   }
-
-  // --------------------------------------------------------------------
 
 }
 

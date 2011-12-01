@@ -1,16 +1,16 @@
 <?php
 
 /**
- * WHMCS API
+ * Client class for managing clients
  *
+ * @package   WHMCS
  * @author    Joshua Priddle <jpriddle@nevercraft.net>
  * @version   v0.0.1
  * @copyright 2011 DotBlock Inc
  */
 
-class WHMCS_Client extends WHMCS_Base {
-
-  // --------------------------------------------------------------------
+class WHMCS_Client extends WHMCS_Base
+{
 
   /**
    * Create a new client
@@ -50,8 +50,6 @@ class WHMCS_Client extends WHMCS_Base {
     return self::send_request($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Update a client's info
    *
@@ -90,8 +88,6 @@ class WHMCS_Client extends WHMCS_Base {
     return self::send_request($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Delete a client
    *
@@ -108,8 +104,6 @@ class WHMCS_Client extends WHMCS_Base {
     $params['action'] = 'deleteclient';
     return self::send_request($params);
   }
-
-  // --------------------------------------------------------------------
 
   /**
    * Get multiple clients
@@ -130,8 +124,6 @@ class WHMCS_Client extends WHMCS_Base {
     return self::send_request($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Get a client's info
    *
@@ -150,8 +142,6 @@ class WHMCS_Client extends WHMCS_Base {
     return self::send_request($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Get a hash of a client's password
    *
@@ -168,8 +158,6 @@ class WHMCS_Client extends WHMCS_Base {
     $params['action'] = 'getclientpassword';
     return self::send_request($params);
   }
-
-  // --------------------------------------------------------------------
 
   /**
    * Add a client contact
@@ -206,8 +194,6 @@ class WHMCS_Client extends WHMCS_Base {
     return self::send_request($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Get client's contacts
    *
@@ -238,8 +224,6 @@ class WHMCS_Client extends WHMCS_Base {
     $params['action'] = 'getcontacts';
     return self::send_request($params);
   }
-
-  // --------------------------------------------------------------------
 
   /**
    * Update a client's contact
@@ -279,8 +263,6 @@ class WHMCS_Client extends WHMCS_Base {
     return self::send_request($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Delete a client's contact
    *
@@ -297,8 +279,6 @@ class WHMCS_Client extends WHMCS_Base {
     $params['action'] = 'deletecontact';
     return self::send_request($params);
   }
-
-  // --------------------------------------------------------------------
 
   /**
    * Get client's products
@@ -319,8 +299,6 @@ class WHMCS_Client extends WHMCS_Base {
     $params['action'] = 'getclientsproducts';
     return self::send_request($params);
   }
-
-  // --------------------------------------------------------------------
 
   /**
    * Update client's product
@@ -361,8 +339,6 @@ class WHMCS_Client extends WHMCS_Base {
     return self::send_request($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Validate client login info
    *
@@ -381,8 +357,6 @@ class WHMCS_Client extends WHMCS_Base {
     return self::send_request($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Send email to client
    *
@@ -400,8 +374,6 @@ class WHMCS_Client extends WHMCS_Base {
     $params['action'] = 'sendemail';
     return self::send_request($params);
   }
-
-  // --------------------------------------------------------------------
 
 }
 

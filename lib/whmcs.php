@@ -1,14 +1,13 @@
 <?php
 
 /**
- * WHMCS API
+ * Load all the required WHMCS classes
  *
+ * @package   WHMCS
  * @author    Joshua Priddle <jpriddle@nevercraft.net>
  * @version   v0.0.1
  * @copyright 2011 DotBlock Inc
  */
-
-// --------------------------------------------------------------------
 
 $dir = realpath(dirname(__FILE__));
 

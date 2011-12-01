@@ -1,16 +1,16 @@
 <?php
 
 /**
- * WHMCS API
+ * Module class for working with hosting account modules
  *
+ * @package   WHMCS
  * @author    Joshua Priddle <jpriddle@nevercraft.net>
  * @version   v0.0.1
  * @copyright 2011 DotBlock Inc
  */
 
-class WHMCS_Module extends WHMCS_Base {
-
-  // --------------------------------------------------------------------
+class WHMCS_Module extends WHMCS_Base
+{
 
   /**
    * Run the module create command
@@ -28,8 +28,6 @@ class WHMCS_Module extends WHMCS_Base {
     $params['action'] = 'modulecreate';
     return self::send_request($params);
   }
-
-  // --------------------------------------------------------------------
 
   /**
    * Run the module suspend command
@@ -49,8 +47,6 @@ class WHMCS_Module extends WHMCS_Base {
     return self::send_request($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Run the module unsuspend command
    *
@@ -68,8 +64,6 @@ class WHMCS_Module extends WHMCS_Base {
     return self::send_request($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Run the module terminate command
    *
@@ -86,8 +80,6 @@ class WHMCS_Module extends WHMCS_Base {
     $params['action'] = 'moduleterminate';
     return self::send_request($params);
   }
-
-  // --------------------------------------------------------------------
 
 }
 

@@ -1,16 +1,16 @@
 <?php
 
 /**
- * WHMCS API
+ * Misc class for miscelaneous WHMCS API functions
  *
+ * @package   WHMCS
  * @author    Joshua Priddle <jpriddle@nevercraft.net>
  * @version   v0.0.1
  * @copyright 2011 DotBlock Inc
  */
 
-class WHMCS_Misc extends WHMCS_Base {
-
-  // --------------------------------------------------------------------
+class WHMCS_Misc extends WHMCS_Base
+{
 
   /**
    * Perform a whois lookup for a domain name
@@ -28,8 +28,6 @@ class WHMCS_Misc extends WHMCS_Base {
     $params['action'] = 'domainwhois';
     return self::send_request($params);
   }
-
-  // --------------------------------------------------------------------
 
   /**
    * Get activity log
@@ -49,8 +47,6 @@ class WHMCS_Misc extends WHMCS_Base {
     return self::send_request($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Get administrator details
    *
@@ -62,8 +58,6 @@ class WHMCS_Misc extends WHMCS_Base {
   public static function get_admin_details() {
     return self::send_request(array('action' => 'getadmindetails'));
   }
-
-  // --------------------------------------------------------------------
 
   /**
    * Update administrator notes
@@ -82,8 +76,6 @@ class WHMCS_Misc extends WHMCS_Base {
     return self::send_request($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Get allowed currencies
    *
@@ -95,8 +87,6 @@ class WHMCS_Misc extends WHMCS_Base {
   public static function get_currencies() {
     return self::send_request(array('action' => 'getcurrencies'));
   }
-
-  // --------------------------------------------------------------------
 
   /**
    * Get promotions
@@ -117,8 +107,6 @@ class WHMCS_Misc extends WHMCS_Base {
     return WHMCS_Invoice::get_promotions($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Get email templates
    *
@@ -137,8 +125,6 @@ class WHMCS_Misc extends WHMCS_Base {
     return self::send_request($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Get todo items
    *
@@ -156,8 +142,6 @@ class WHMCS_Misc extends WHMCS_Base {
     return self::send_request($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Get configured todo item statuses
    *
@@ -169,8 +153,6 @@ class WHMCS_Misc extends WHMCS_Base {
   public static function get_todo_item_statuses() {
     return self::send_request(array('action' => 'gettodoitemstatuses'));
   }
-
-  // --------------------------------------------------------------------
 
   /**
    * Get staff online
@@ -184,8 +166,6 @@ class WHMCS_Misc extends WHMCS_Base {
     return self::send_request(array('action' => 'getstaffonline'));
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Get stats
    *
@@ -197,8 +177,6 @@ class WHMCS_Misc extends WHMCS_Base {
   public static function get_stats() {
     return self::send_request(array('action' => 'getstats'));
   }
-
-  // --------------------------------------------------------------------
 
   /**
    * Encrypt a password with the WHMCS algorithm
@@ -216,8 +194,6 @@ class WHMCS_Misc extends WHMCS_Base {
     $params['action'] = 'encryptpassword';
     return self::send_request($params);
   }
-
-  // --------------------------------------------------------------------
 
   /**
    * Decrypt a string with the WHMCS algorithm
@@ -237,8 +213,6 @@ class WHMCS_Misc extends WHMCS_Base {
     $params['action'] = 'decryptpassword';
     return self::send_request($params);
   }
-
-  // --------------------------------------------------------------------
 
 }
 

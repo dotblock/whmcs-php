@@ -1,14 +1,52 @@
 <?php
 
 /**
- * WHMCS API
+ * Main class used to subclass WHMCS API resources
  *
+ * @package   WHMCS
  * @author    Joshua Priddle <jpriddle@nevercraft.net>
  * @version   v0.0.1
  * @copyright 2011 DotBlock Inc
  */
 
-class WHMCS_Base {
+class WHMCS_Base
+{
+
+  /**
+   * @var The URL to the WHMCS API
+   */
+  public static $api_url;
+
+  /**
+   * @var The username for the authentication to the WHMCS API
+   */
+  public static $api_username;
+
+  /**
+   * @var The password for the authentication to the WHMCS API
+   */
+  public static $api_password;
+
+  /**
+   * Sets the WHMCS API settings
+   *
+   * @param string $api_url      The url to the WHMCS API
+   * @param string $api_username The username for the API to authenticate using
+   * @param string $api_password The password for the API to authenticate using
+   *
+   * @return void
+   */
+
+  public static function init($api_url, $api_username, $api_password) {
+    if (empty(self::$api_url) || empty(self::$api_username) || empty(self::$api_password)) {
+      trigger_error("Must set WHMCS API url, username, and password settings");
+      exit;
+    }
+
+    self::$api_url = $api_url;
+    self::$api_username = $api_username;
+    self::$api_password = $api_password;
+  }
 
   /**
    * Sends an API request to the WHMCS API
@@ -17,23 +55,26 @@ class WHMCS_Base {
    * action - The API action to perform
    *
    * All other parameters are passed along as HTTP POST variables
+   *
+   * @param array $params The parameters to pass to WHMCS
+   * @return unknown
    */
 
   public static function send_request($params = array()) {
-    if ( ! isset($params['action'])) {
+    if (empty(self::$api_url) || empty(self::$api_username) || empty(self::$api_password)) {
+      trigger_error("Must set WHMCS API url, username, and password settings");
+      exit;
+    }
+
+    if (empty($params['action'])) {
       trigger_error("No API action set");
       exit;
     }
 
-    if ( ! defined('WHMCS_USERNAME') || ! defined('WHMCS_PASSWORD') || ! defined('WHMCS_URL')) {
-      trigger_error("Must set WHMCS_USERNAME, WHMCS_PASSWORD, and WHMCS_URL constants");
-      exit;
-    }
+    $params['username'] = self::$username;
+    $params['password'] = self::$password;
 
-    $params['username'] = WHMCS_USERNAME;
-    $params['password'] = WHMCS_PASSWORD;
-
-    $url = WHMCS_URL;
+    $url = self::$api_url;
 
     $ch = curl_init($url);
 
@@ -46,36 +87,41 @@ class WHMCS_Base {
 
     curl_close($ch);
 
-    return self::parse_response($data);
+    $response = self::parse_response($data);
+    return $response;
   }
-
-  // --------------------------------------------------------------------
 
   /**
    * Converts the API response to a Hash
+   *
+   * @param string $response The resonse from the API request
+   * @return void
    */
 
-  public static function parse_response($raw = "") {
-    if (strpos($raw, "xml version") !== FALSE) {
-      return simplexml_load_string($raw);
-    } elseif (strpos($raw, ';') !== FALSE) {
+  public static function parse_response($response) {
+    if (strpos($response, "xml version") !== FALSE) {
+      return simplexml_load_string($response);
+    }
+    
+    if (strpos($response, ';') !== FALSE) {
       $output = array();
-      $lines = explode(';', $raw);
+      $lines = explode(';', $response);
+
       foreach ($lines as $line) {
         if (strpos($line, '=') !== FALSE) {
           list($key, $val) = explode('=', $line);
+          
           if ($key != "") {
             $output[$key] = $val;
           }
         }
       }
-      return (object) $output;
-    } else {
-      return array();
-    }
-  }
 
-  // --------------------------------------------------------------------
+      return (object) $output;
+    }
+
+    return array();
+  }
 
 }
 

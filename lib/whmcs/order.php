@@ -1,16 +1,16 @@
 <?php
 
 /**
- * WHMCS API
+ * Order class for managing orders
  *
+ * @package   WHMCS
  * @author    Joshua Priddle <jpriddle@nevercraft.net>
  * @version   v0.0.1
  * @copyright 2011 DotBlock Inc
  */
 
-class WHMCS_Order extends WHMCS_Base {
-
-  // --------------------------------------------------------------------
+class WHMCS_Order extends WHMCS_Base
+{
 
   /**
    * Create a new order
@@ -51,8 +51,6 @@ class WHMCS_Order extends WHMCS_Base {
     return self::send_request($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Get orders
    *
@@ -70,8 +68,6 @@ class WHMCS_Order extends WHMCS_Base {
     $params['action'] = 'getorders';
     return self::send_request($params);
   }
-
-  // --------------------------------------------------------------------
 
   /**
    * Get products
@@ -92,8 +88,6 @@ class WHMCS_Order extends WHMCS_Base {
     return self::send_request($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Get promotions
    *
@@ -111,8 +105,6 @@ class WHMCS_Order extends WHMCS_Base {
     return self::send_request($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Get order statuses
    *
@@ -125,8 +117,6 @@ class WHMCS_Order extends WHMCS_Base {
     $params['action'] = 'getorderstatuses';
     return self::send_request($params);
   }
-
-  // --------------------------------------------------------------------
 
   /**
    * Accept an order
@@ -145,8 +135,6 @@ class WHMCS_Order extends WHMCS_Base {
     return self::send_request($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Place an order in pending
    *
@@ -163,8 +151,6 @@ class WHMCS_Order extends WHMCS_Base {
     $params['action'] = 'pendingorder';
     return self::send_request($params);
   }
-
-  // --------------------------------------------------------------------
 
   /**
    * Cancel an order
@@ -183,8 +169,6 @@ class WHMCS_Order extends WHMCS_Base {
     return self::send_request($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Mark an order as fraud
    *
@@ -202,8 +186,6 @@ class WHMCS_Order extends WHMCS_Base {
     return self::send_request($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Delete an order
    *
@@ -220,8 +202,6 @@ class WHMCS_Order extends WHMCS_Base {
     $params['action'] = 'deleteorder';
     return self::send_request($params);
   }
-
-  // --------------------------------------------------------------------
 
 }
 

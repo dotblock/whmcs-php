@@ -1,16 +1,16 @@
 <?php
 
 /**
- * WHMCS API
+ * Quote class for managing quotes
  *
+ * @package   WHMCS
  * @author    Joshua Priddle <jpriddle@nevercraft.net>
  * @version   v0.0.1
  * @copyright 2011 DotBlock Inc
  */
 
-class WHMCS_Quote extends WHMCS_Base {
-
-  // --------------------------------------------------------------------
+class WHMCS_Quote extends WHMCS_Base
+{
 
   /**
    * Create a new quote
@@ -52,8 +52,6 @@ class WHMCS_Quote extends WHMCS_Base {
     $params['action'] = 'createquote';
     return self::send_request($params);
   }
-
-  // --------------------------------------------------------------------
 
   /**
    * Update an existing quote
@@ -98,8 +96,6 @@ class WHMCS_Quote extends WHMCS_Base {
     return self::send_request($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Delete a quote
    *
@@ -116,8 +112,6 @@ class WHMCS_Quote extends WHMCS_Base {
     $params['action'] = 'deletequote';
     return self::send_request($params);
   }
-
-  // --------------------------------------------------------------------
 
   /**
    * Send a quote to client
@@ -136,8 +130,6 @@ class WHMCS_Quote extends WHMCS_Base {
     return self::send_request($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Accept a quote
    *
@@ -154,8 +146,6 @@ class WHMCS_Quote extends WHMCS_Base {
     $params['action'] = 'acceptquote';
     return self::send_request($params);
   }
-
-  // --------------------------------------------------------------------
 
 }
 

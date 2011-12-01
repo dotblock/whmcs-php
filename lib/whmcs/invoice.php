@@ -1,16 +1,16 @@
 <?php
 
 /**
- * WHMCS API
+ * Invoice class for managing invoices
  *
+ * @package   WHMCS
  * @author    Joshua Priddle <jpriddle@nevercraft.net>
  * @version   v0.0.1
  * @copyright 2011 DotBlock Inc
  */
 
-class WHMCS_Invoice extends WHMCS_Base {
-
-  // --------------------------------------------------------------------
+class WHMCS_Invoice extends WHMCS_Base
+{
 
   /**
    * Get invoices
@@ -32,8 +32,6 @@ class WHMCS_Invoice extends WHMCS_Base {
     return self::send_request($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Get an invoice
    *
@@ -50,8 +48,6 @@ class WHMCS_Invoice extends WHMCS_Base {
     $params['action'] = 'getinvoice';
     return self::send_request($params);
   }
-
-  // --------------------------------------------------------------------
 
   /**
    * Create a new invoice
@@ -85,8 +81,6 @@ class WHMCS_Invoice extends WHMCS_Base {
     return self::send_request($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Update an existing invoice
    *
@@ -117,8 +111,6 @@ class WHMCS_Invoice extends WHMCS_Base {
     return self::send_request($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Add an invoice payment
    *
@@ -142,8 +134,6 @@ class WHMCS_Invoice extends WHMCS_Base {
     return self::send_request($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Attempt to capture payment for an invoice
    *
@@ -161,8 +151,6 @@ class WHMCS_Invoice extends WHMCS_Base {
     $params['action'] = 'capturepayment';
     return self::send_request($params);
   }
-
-  // --------------------------------------------------------------------
 
   /**
    * Add a new billable item
@@ -188,8 +176,6 @@ class WHMCS_Invoice extends WHMCS_Base {
     return self::send_request($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Add a credit to client's account
    *
@@ -208,8 +194,6 @@ class WHMCS_Invoice extends WHMCS_Base {
     $params['action'] = 'addcredit';
     return self::send_request($params);
   }
-
-  // --------------------------------------------------------------------
 
   /**
    * Add transaction
@@ -236,8 +220,6 @@ class WHMCS_Invoice extends WHMCS_Base {
     return self::send_request($params);
   }
 
-  // --------------------------------------------------------------------
-
   /**
    * Get configured payment methods
    *
@@ -249,8 +231,6 @@ class WHMCS_Invoice extends WHMCS_Base {
   public static function get_payment_methods() {
     return self::send_request(array('action' => 'getpaymentmethods'));
   }
-
-  // --------------------------------------------------------------------
 
 }
 
