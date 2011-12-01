@@ -39,7 +39,7 @@ class WHMCS_Base
 
   public static function init($api_url, $api_username, $api_password) {
     if (empty(self::$api_url) || empty(self::$api_username) || empty(self::$api_password)) {
-      trigger_error("Must set WHMCS API url, username, and password settings");
+      trigger_error('Must set WHMCS API url, username, and password settings');
       exit;
     }
 
@@ -62,21 +62,20 @@ class WHMCS_Base
 
   public static function send_request($params = array()) {
     if (empty(self::$api_url) || empty(self::$api_username) || empty(self::$api_password)) {
-      trigger_error("Must set WHMCS API url, username, and password settings");
+      trigger_error('Must set WHMCS API url, username, and password settings');
       exit;
     }
 
     if (empty($params['action'])) {
-      trigger_error("No API action set");
+      trigger_error('No API action set');
       exit;
     }
 
+    $params['responsetype'] = 'json';
     $params['username'] = self::$username;
     $params['password'] = self::$password;
 
-    $url = self::$api_url;
-
-    $ch = curl_init($url);
+    $ch = curl_init(self::$api_url);
 
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_TIMEOUT, 100);
@@ -99,28 +98,24 @@ class WHMCS_Base
    */
 
   public static function parse_response($response) {
-    if (strpos($response, "xml version") !== FALSE) {
-      return simplexml_load_string($response);
-    }
-    
     if (strpos($response, ';') !== FALSE) {
-      $output = array();
       $lines = explode(';', $response);
+      $response = new stdClass;
 
       foreach ($lines as $line) {
         if (strpos($line, '=') !== FALSE) {
           list($key, $val) = explode('=', $line);
           
-          if ($key != "") {
-            $output[$key] = $val;
+          if (!empty($key)) {
+            $output->$key = $val;
           }
         }
       }
-
-      return (object) $output;
+    } else {
+      $response = json_decode($response);
     }
 
-    return array();
+    return $response;
   }
 
 }
