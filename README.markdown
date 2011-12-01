@@ -8,7 +8,7 @@ whmcs-php provides an PHP SDK for the [WHMCS API](http://wiki.whmcs.com/API:Func
     <?php
     include_once 'lib/whmcs.php';
 
-    WHMCS_Client::init('http://example.com/includes/api.php', 'someusername', 'c4ca4238a0b923820dcc509a6f75849b');
+    WHMCS_Client::init('http://example.com/includes/api.php', 'someusername', md5('somepass'));
     var_dump(WHMCS_Client::get_clients_details(array('clientid' => '1')));
 
 See the `lib/whmcs/` in this repo for usage details.
