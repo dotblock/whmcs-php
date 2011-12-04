@@ -107,7 +107,7 @@ class WHMCS_Base
           list($key, $val) = explode('=', $line);
           
           if (!empty($key)) {
-            $output->$key = $val;
+            $response->$key = $val;
           }
         }
       }
