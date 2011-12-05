@@ -91,31 +91,14 @@ class WHMCS_Base
   }
 
   /**
-   * Converts the API response to a Hash
+   * Parses the API response
    *
-   * @param string $response The resonse from the API request
+   * @param string $response The response from the API request
    * @return void
    */
 
   public static function parse_response($response) {
-    if (strpos($response, ';') !== FALSE) {
-      $lines = explode(';', $response);
-      $response = new stdClass;
-
-      foreach ($lines as $line) {
-        if (strpos($line, '=') !== FALSE) {
-          list($key, $val) = explode('=', $line);
-          
-          if (!empty($key)) {
-            $response->$key = $val;
-          }
-        }
-      }
-    } else {
-      $response = json_decode($response);
-    }
-
-    return $response;
+    return json_decode($response);
   }
 
 }
