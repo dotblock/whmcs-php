@@ -13,23 +13,6 @@ class WHMCS_Misc extends WHMCS_Base
 {
 
   /**
-   * Perform a whois lookup for a domain name
-   *
-   * Parameters:
-   *
-   * domain - the domain to check
-   *
-   * See:
-   *
-   * http://wiki.whmcs.com/API:Domain_WHOIS
-   */
-
-  public static function domain_whois($params = array()) {
-    $params['action'] = 'domainwhois';
-    return self::send_request($params);
-  }
-
-  /**
    * Get activity log
    *
    * Parameters:
