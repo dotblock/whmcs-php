@@ -21,7 +21,7 @@ class WHMCS_Module extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Module_Create
+   * http://docs.whmcs.com/API:Module_Create
    */
 
   public static function module_create($params = array()) {
@@ -39,7 +39,7 @@ class WHMCS_Module extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Module_Suspend
+   * http://docs.whmcs.com/API:Module_Suspend
    */
 
   public static function module_suspend($params = array()) {
@@ -56,7 +56,7 @@ class WHMCS_Module extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Module_Unsuspend
+   * http://docs.whmcs.com/API:Module_Unsuspend
    */
 
   public static function module_unsuspend($params = array()) {
@@ -73,7 +73,7 @@ class WHMCS_Module extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Module_Terminate
+   * http://docs.whmcs.com/API:Module_Terminate
    */
 
   public static function module_terminate($params = array()) {

@@ -1,6 +1,6 @@
 # whmcs-php
 
-whmcs-php provides an PHP SDK for the [WHMCS API](http://wiki.whmcs.com/API:Functions).
+whmcs-php provides an PHP SDK for the [WHMCS API](http://docs.whmcs.com/API:Functions).
 
 
 ## Usage

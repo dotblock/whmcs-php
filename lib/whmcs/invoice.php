@@ -24,7 +24,7 @@ class WHMCS_Invoice extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Get_Invoices
+   * http://docs.whmcs.com/API:Get_Invoices
    */
 
   public static function get_invoices($params = array()) {
@@ -41,7 +41,7 @@ class WHMCS_Invoice extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Get_Invoice
+   * http://docs.whmcs.com/API:Get_Invoice
    */
 
   public static function get_invoice($params = array()) {
@@ -73,7 +73,7 @@ class WHMCS_Invoice extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Create_Invoice
+   * http://docs.whmcs.com/API:Create_Invoice
    */
 
   public static function create_invoice($params = array()) {
@@ -103,7 +103,7 @@ class WHMCS_Invoice extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Update_Invoice
+   * http://docs.whmcs.com/API:Update_Invoice
    */
 
   public static function update_invoice($params = array()) {
@@ -126,7 +126,7 @@ class WHMCS_Invoice extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Add_Invoice_Payment
+   * http://docs.whmcs.com/API:Add_Invoice_Payment
    */
 
   public static function add_invoice_payment($params = array()) {
@@ -144,7 +144,7 @@ class WHMCS_Invoice extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Capture_Payment
+   * http://docs.whmcs.com/API:Capture_Payment
    */
 
   public static function capture_payment($params = array()) {
@@ -168,7 +168,7 @@ class WHMCS_Invoice extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Add_Billable_Item
+   * http://docs.whmcs.com/API:Add_Billable_Item
    */
 
   public static function add_billable_item($params = array()) {
@@ -187,7 +187,7 @@ class WHMCS_Invoice extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Add_Credit
+   * http://docs.whmcs.com/API:Add_Credit
    */
 
   public static function add_credit($params = array()) {
@@ -212,7 +212,7 @@ class WHMCS_Invoice extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Add_Transaction
+   * http://docs.whmcs.com/API:Add_Transaction
    */
 
   public static function add_transaction($params = array()) {
@@ -225,7 +225,7 @@ class WHMCS_Invoice extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Get_Payment_Methods
+   * http://docs.whmcs.com/API:Get_Payment_Methods
    */
 
   public static function get_payment_methods() {

@@ -22,7 +22,7 @@ class WHMCS_Misc extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Get_Activity_Log
+   * http://docs.whmcs.com/API:Get_Activity_Log
    */
 
   public static function get_activity_log($params = array()) {
@@ -35,7 +35,7 @@ class WHMCS_Misc extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Get_Admin_Details
+   * http://docs.whmcs.com/API:Get_Admin_Details
    */
 
   public static function get_admin_details() {
@@ -51,7 +51,7 @@ class WHMCS_Misc extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Update_Admin_Notes
+   * http://docs.whmcs.com/API:Update_Admin_Notes
    */
 
   public static function update_admin_notes($params = array()) {
@@ -64,7 +64,7 @@ class WHMCS_Misc extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Get_Currencies
+   * http://docs.whmcs.com/API:Get_Currencies
    */
 
   public static function get_currencies() {
@@ -83,7 +83,7 @@ class WHMCS_Misc extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Get_Promotions
+   * http://docs.whmcs.com/API:Get_Promotions
    */
 
   public static function get_promotions($params = array()) {
@@ -100,7 +100,7 @@ class WHMCS_Misc extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Get_Email_Templates
+   * http://docs.whmcs.com/API:Get_Email_Templates
    */
 
   public static function get_email_templates($params = array()) {
@@ -117,7 +117,7 @@ class WHMCS_Misc extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Get_To-Do_Items
+   * http://docs.whmcs.com/API:Get_To-Do_Items
    */
 
   public static function get_todo_items($params = array()) {
@@ -130,7 +130,7 @@ class WHMCS_Misc extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Get_To-Do_Items_Statuses
+   * http://docs.whmcs.com/API:Get_To-Do_Items_Statuses
    */
 
   public static function get_todo_item_statuses() {
@@ -142,7 +142,7 @@ class WHMCS_Misc extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Get_Staff_Online
+   * http://docs.whmcs.com/API:Get_Staff_Online
    */
 
   public static function get_staff_online() {
@@ -154,7 +154,7 @@ class WHMCS_Misc extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Get_Stats
+   * http://docs.whmcs.com/API:Get_Stats
    */
 
   public static function get_stats() {
@@ -170,7 +170,7 @@ class WHMCS_Misc extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Encrypt_Password
+   * http://docs.whmcs.com/API:Encrypt_Password
    */
 
   public static function encrypt_password($params = array()) {
@@ -189,7 +189,7 @@ class WHMCS_Misc extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Decrypt_Password
+   * http://docs.whmcs.com/API:Decrypt_Password
    */
 
   public static function decrypt_password($params = array()) {

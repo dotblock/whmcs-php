@@ -43,7 +43,7 @@ class WHMCS_Order extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Add_Order
+   * http://docs.whmcs.com/API:Add_Order
    */
 
   public static function add_order($params = array()) {
@@ -61,7 +61,7 @@ class WHMCS_Order extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Get_Orders
+   * http://docs.whmcs.com/API:Get_Orders
    */
 
   public static function get_orders($params = array()) {
@@ -80,7 +80,7 @@ class WHMCS_Order extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Get_Products
+   * http://docs.whmcs.com/API:Get_Products
    */
 
   public static function get_products($params = array()) {
@@ -97,7 +97,7 @@ class WHMCS_Order extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Get_Promotions
+   * http://docs.whmcs.com/API:Get_Promotions
    */
 
   public static function get_promotions($params = array()) {
@@ -110,7 +110,7 @@ class WHMCS_Order extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Get_Order_Statuses
+   * http://docs.whmcs.com/API:Get_Order_Statuses
    */
 
   public static function get_order_statuses() {
@@ -127,7 +127,7 @@ class WHMCS_Order extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Accept_Order
+   * http://docs.whmcs.com/API:Accept_Order
    */
 
   public static function accept_order($params = array()) {
@@ -144,7 +144,7 @@ class WHMCS_Order extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Pending_Order
+   * http://docs.whmcs.com/API:Pending_Order
    */
 
   public static function pending_order($params = array()) {
@@ -161,7 +161,7 @@ class WHMCS_Order extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Cancel_Order
+   * http://docs.whmcs.com/API:Cancel_Order
    */
 
   public static function cancel_order($params = array()) {
@@ -178,7 +178,7 @@ class WHMCS_Order extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Fraud_Order
+   * http://docs.whmcs.com/API:Fraud_Order
    */
 
   public static function fraud_order($params = array()) {
@@ -195,7 +195,7 @@ class WHMCS_Order extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Delete_Order
+   * http://docs.whmcs.com/API:Delete_Order
    */
 
   public static function delete_order($params = array()) {

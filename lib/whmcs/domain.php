@@ -21,7 +21,7 @@ class WHMCS_Domain extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Domain_Locking_Status
+   * http://docs.whmcs.com/API:Domain_Locking_Status
    */
 
   public static function get_domain_lock($params = array()) {
@@ -38,7 +38,7 @@ class WHMCS_Domain extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Domain_Nameservers
+   * http://docs.whmcs.com/API:Domain_Nameservers
    */
 
   public static function get_nameservers($params = array()) {
@@ -55,7 +55,7 @@ class WHMCS_Domain extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Get_Domain_WHOIS
+   * http://docs.whmcs.com/API:Get_Domain_WHOIS
    */
 
   public static function get_whois($params = array()) {
@@ -72,7 +72,7 @@ class WHMCS_Domain extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Domain_EPP
+   * http://docs.whmcs.com/API:Domain_EPP
    */
 
   public static function request_epp($params = array()) {
@@ -90,7 +90,7 @@ class WHMCS_Domain extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Domain_Update_Lock
+   * http://docs.whmcs.com/API:Domain_Update_Lock
    */
 
   public static function update_lock($params = array()) {
@@ -112,7 +112,7 @@ class WHMCS_Domain extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Domain_Update_Nameservers
+   * http://docs.whmcs.com/API:Domain_Update_Nameservers
    */
 
   public static function update_nameservers($params = array()) {
@@ -130,7 +130,7 @@ class WHMCS_Domain extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Domain_Update_WHOIS
+   * http://docs.whmcs.com/API:Domain_Update_WHOIS
    */
 
   public static function update_whois($params = array()) {
@@ -147,7 +147,7 @@ class WHMCS_Domain extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Domain_WHOIS
+   * http://docs.whmcs.com/API:Domain_WHOIS
    */
 
   public static function domain_whois($params = array()) {

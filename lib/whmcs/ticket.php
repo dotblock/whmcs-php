@@ -29,7 +29,7 @@ class WHMCS_Ticket extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Open_Ticket
+   * http://docs.whmcs.com/API:Open_Ticket
    */
 
   public static function open_ticket($params = array()) {
@@ -52,7 +52,7 @@ class WHMCS_Ticket extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Reply_Ticket
+   * http://docs.whmcs.com/API:Reply_Ticket
    */
 
   public static function reply_ticket($params = array()) {
@@ -74,7 +74,7 @@ class WHMCS_Ticket extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Get_Tickets
+   * http://docs.whmcs.com/API:Get_Tickets
    */
 
   public static function get_tickets($params = array()) {
@@ -91,7 +91,7 @@ class WHMCS_Ticket extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Get_Ticket
+   * http://docs.whmcs.com/API:Get_Ticket
    */
 
   public static function get_ticket($params = array()) {
@@ -111,7 +111,7 @@ class WHMCS_Ticket extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Update_Ticket
+   * http://docs.whmcs.com/API:Update_Ticket
    */
 
   public static function update_ticket($params = array()) {
@@ -129,7 +129,7 @@ class WHMCS_Ticket extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Add_Ticket_Note
+   * http://docs.whmcs.com/API:Add_Ticket_Note
    */
 
   public static function add_ticket_note($params = array()) {
@@ -146,7 +146,7 @@ class WHMCS_Ticket extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Delete_Ticket
+   * http://docs.whmcs.com/API:Delete_Ticket
    */
 
   public static function delete_ticket($params = array()) {
@@ -159,7 +159,7 @@ class WHMCS_Ticket extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Get_Support_Departments
+   * http://docs.whmcs.com/API:Get_Support_Departments
    */
 
   public static function get_support_departments() {
@@ -175,7 +175,7 @@ class WHMCS_Ticket extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Get_Support_Statuses
+   * http://docs.whmcs.com/API:Get_Support_Statuses
    */
 
   public static function get_support_statuses($params = array()) {
@@ -188,7 +188,7 @@ class WHMCS_Ticket extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Get_Ticket_Predefined_Cats
+   * http://docs.whmcs.com/API:Get_Ticket_Predefined_Cats
    */
 
   public static function get_ticket_predefined_cats() {
@@ -204,7 +204,7 @@ class WHMCS_Ticket extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Get_Ticket_Predefined_Replies
+   * http://docs.whmcs.com/API:Get_Ticket_Predefined_Replies
    */
 
   public static function get_ticket_predefined_repies($params = array()) {

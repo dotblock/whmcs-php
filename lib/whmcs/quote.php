@@ -45,7 +45,7 @@ class WHMCS_Quote extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Create_Quote
+   * http://docs.whmcs.com/API:Create_Quote
    */
 
   public static function create_quote($params = array()) {
@@ -88,7 +88,7 @@ class WHMCS_Quote extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Update_Quote
+   * http://docs.whmcs.com/API:Update_Quote
    */
 
   public static function update_quote($params = array()) {
@@ -105,7 +105,7 @@ class WHMCS_Quote extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Delete_Quote
+   * http://docs.whmcs.com/API:Delete_Quote
    */
 
   public static function delete_quote($params = array()) {
@@ -122,7 +122,7 @@ class WHMCS_Quote extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Send_Quote
+   * http://docs.whmcs.com/API:Send_Quote
    */
 
   public static function send_quote($params = array()) {
@@ -139,7 +139,7 @@ class WHMCS_Quote extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Accept_Quote
+   * http://docs.whmcs.com/API:Accept_Quote
    */
 
   public static function accept_quote($params = array()) {

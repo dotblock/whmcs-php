@@ -42,7 +42,7 @@ class WHMCS_Client extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Add_Client
+   * http://docs.whmcs.com/API:Add_Client
    */
 
   public static function add_client($params = array()) {
@@ -80,7 +80,7 @@ class WHMCS_Client extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Update_Client
+   * http://docs.whmcs.com/API:Update_Client
    */
 
   public static function update_client($params = array()) {
@@ -97,7 +97,7 @@ class WHMCS_Client extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Delete_Client
+   * http://docs.whmcs.com/API:Delete_Client
    */
 
   public static function delete_client($params = array()) {
@@ -116,7 +116,7 @@ class WHMCS_Client extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Get_Clients
+   * http://docs.whmcs.com/API:Get_Clients
    */
 
   public static function get_clients($params = array()) {
@@ -134,7 +134,7 @@ class WHMCS_Client extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Get_Clients_Details
+   * http://docs.whmcs.com/API:Get_Clients_Details
    */
 
   public static function get_clients_details($params = array()) {
@@ -151,7 +151,7 @@ class WHMCS_Client extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Get_Clients_Password
+   * http://docs.whmcs.com/API:Get_Clients_Password
    */
 
   public static function get_clients_password($params = array()) {
@@ -186,7 +186,7 @@ class WHMCS_Client extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Add_Contact
+   * http://docs.whmcs.com/API:Add_Contact
    */
 
   public static function add_contact($params = array()) {
@@ -217,7 +217,7 @@ class WHMCS_Client extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Get_Contacts
+   * http://docs.whmcs.com/API:Get_Contacts
    */
 
   public static function get_contacts($params = array()) {
@@ -255,7 +255,7 @@ class WHMCS_Client extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Update_Contact
+   * http://docs.whmcs.com/API:Update_Contact
    */
 
   public static function update_contact($params = array()) {
@@ -272,7 +272,7 @@ class WHMCS_Client extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Delete_Contact
+   * http://docs.whmcs.com/API:Delete_Contact
    */
 
   public static function delete_contact($params = array()) {
@@ -292,7 +292,7 @@ class WHMCS_Client extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Get_Clients_Products
+   * http://docs.whmcs.com/API:Get_Clients_Products
    */
 
   public static function get_clients_products($params = array()) {
@@ -331,7 +331,7 @@ class WHMCS_Client extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Update_Client_Product
+   * http://docs.whmcs.com/API:Update_Client_Product
    */
 
   public static function update_client_product($params = array()) {
@@ -349,7 +349,7 @@ class WHMCS_Client extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Validate_Login
+   * http://docs.whmcs.com/API:Validate_Login
    */
 
   public static function validate_login($params = array()) {
@@ -367,7 +367,7 @@ class WHMCS_Client extends WHMCS_Base
    *
    * See:
    *
-   * http://wiki.whmcs.com/API:Send_Email
+   * http://docs.whmcs.com/API:Send_Email
    */
 
   public static function send_email($params = array()) {
