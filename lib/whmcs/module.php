@@ -81,6 +81,41 @@ class WHMCS_Module extends WHMCS_Base
     return self::send_request($params);
   }
 
+  /**
+   * Run the change package module command
+   *
+   * Parameters:
+   *
+   * serviceid - ID of the service in WHMCS to run the module command
+   *
+   * See:
+   *
+   * http://docs.whmcs.com/API:Module_Change_Package
+   */
+
+  public static function module_change_package($params = array()) {
+    $params['action'] = 'modulechangepackage';
+    return self::send_request($params);
+  }
+
+  /**
+   * Runs the change password command to the module for a service
+   *
+   * Parameters:
+   *
+   * serviceid - the unique id of the service to perform the action on
+   * servicepassword - optional - specify to update the password on the service before calling
+   *
+   * See:
+   *
+   * http://docs.whmcs.com/API:Module_Change_Password
+   */
+
+  public static function module_change_password($params = array()) {
+    $params['action'] = 'modulechangepw';
+    return self::send_request($params);
+  }
+
 }
 
 /* End of file module.php */
