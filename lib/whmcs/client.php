@@ -106,6 +106,41 @@ class WHMCS_Client extends WHMCS_Base
   }
 
   /**
+   * Close a client account
+   *
+   * Parameters:
+   *
+   * clientid - ID Number of the client to close
+   *
+   * See:
+   *
+   * http://docs.whmcs.com/API:Close_Client
+   */
+
+  public static function close_client($params = array()) {
+    $params['action'] = 'closeclient';
+    return self::send_request($params);
+  }
+
+  /**
+   * Add the client note
+   *
+   * Parameters:
+   *
+   * userid - UserID for the note
+   * notes - The note to add
+   *
+   * See:
+   *
+   * http://docs.whmcs.com/API:Add_Client_Note
+   */
+
+  public static function add_client_note($params = array()) {
+    $params['action'] = 'addclientnote';
+    return self::send_request($params);
+  }
+
+  /**
    * Get multiple clients
    *
    * Parameters:
@@ -143,6 +178,70 @@ class WHMCS_Client extends WHMCS_Base
   }
 
   /**
+   * Get a list of the client credits
+   *
+   * Parameters:
+   *
+   * clientid - ID of the client to obtain the credit list for
+   *
+   * See:
+   *
+   * http://docs.whmcs.com/API:Get_Credits
+   */
+
+  public static function get_credits($params = array()) {
+    $params['action'] = 'getcredits';
+    return self::send_request($params);
+  }
+
+  /**
+   * Get a list of the client emails
+   *
+   * Parameters:
+   *
+   * date - date to obtain emails for. Can be YYYYMMDD, YYYYMM, MMDD, DD or MM
+   * subject - to obtain email with a specific subject
+   * limitstart - for pagination, specify an ID to start at
+   * limitnum - to restrict the number of results returned
+   *
+   * See:
+   *
+   * http://docs.whmcs.com/API:Get_Emails
+   */
+
+  public static function get_emails($params = array()) {
+    $params['action'] = 'getemails';
+    return self::send_request($params);
+  }
+
+  /**
+   * Get quotes
+   *
+   * Note: WHMCS has this listed under Client as well as quote. It's
+   * aliased here for consistancy with their API docs
+   *
+   * Parameters:
+   *
+   * quoteid - optional - specific quote to obtain
+   * userid - optional - obtain quotes for a specific user
+   * datecreated - optional - Format YYYYMMDD
+   * lastmodified - optional - Format YYYYMMDD
+   * validuntil - optional - Format YYYYMMDD
+   * stage - optional - Specific stage to retrieve quotes for
+   * subject - optional - to obtain quotes with a specific subject
+   * limitstart - optional - for pagination, specify an ID to start at
+   * limitnum - optional - to restrict the number of results returned
+   *
+   * See:
+   *
+   * http://docs.whmcs.com/API:Get_Quotes
+   */
+
+  public static function get_quotes($params = array()) {
+    return WHMCS_Quote::get_quotes($params);
+  }
+
+  /**
    * Get a hash of a client's password
    *
    * Parameters:
@@ -157,6 +256,27 @@ class WHMCS_Client extends WHMCS_Base
   public static function get_clients_password($params = array()) {
     $params['action'] = 'getclientpassword';
     return self::send_request($params);
+  }
+
+  /**
+   * Get transactions
+   *
+   * Note: WHMCS has this listed under Client as well as invoices. It's
+   * aliased here for consistancy with their API docs
+   *
+   * Parameters:
+   *
+   * userid - optional - User ID to obtain details for
+   * invoiceid - optional - Obtain transactions for a specific invoice
+   * transid - optional - Obtain details for a specific transaction ID
+   *
+   * See:
+   *
+   * http://docs.whmcs.com/API:Get_Transactions
+   */
+
+  public static function get_transactions($params = array()) {
+    return WHMCS_Invoice::get_transactions($params);
   }
 
   /**
@@ -336,6 +456,134 @@ class WHMCS_Client extends WHMCS_Base
 
   public static function update_client_product($params = array()) {
     $params['action'] = 'updateclientproduct';
+    return self::send_request($params);
+  }
+
+  /**
+   * Update client's addon
+   *
+   * Parameters:
+   *
+   * id - ID of addon to update
+   * addonid - optional - Update the defined addon id
+   * name - optional - Custom name to define for the addon
+   * setupfee - optional - Setup fee cost. No symbol, just xx.xx
+   * recurring - optional - Setup fee cost. No symbol, just xx.xx
+   * billingcycle - optional - One of Free Account, One Time, Monthly, Quarterly, Semi-Annually, Annually, Biennially or Triennially
+   * nextduedate - optional - Update the next due date yyyymmdd
+   * nextinvoicedate - optional - Update the next invoice date yyyymmdd
+   * notes - optional - add custom notes to the addon
+   * status - optional - Pending, Active, Suspended, Cancelled, Terminated, Fraud
+   *
+   * See:
+   *
+   * http://docs.whmcs.com/API:Update_Client_Addon
+   */
+
+  public static function update_client_addon($params = array()) {
+    $params['action'] = 'updateclientaddon';
+    return self::send_request($params);
+  }
+
+  /**
+   * Get the details of all the domains a client has
+   *
+   * Parameters:
+   *
+   * clientid - the ID of the client to retrieve products for
+   * domainid - the ID of the domain to retrieve details for
+   * domain - the domain of the service to retrieve details for
+   *
+   * See:
+   *
+   * http://docs.whmcs.com/API:Get_Clients_Domains
+   */
+
+  public static function get_clients_domains($params = array()) {
+    $params['action'] = 'getclientsdomains';
+    return self::send_request($params);
+  }
+
+  /**
+   * Update client's domain
+   *
+   * Parameters:
+   *
+   * domainid - ID of domain to update
+   * domain - instead of domainid
+   * type - optional - Register or Transfer
+   * regdate - optional - Update the reg date yyyymmdd
+   * domain - optional - Update the domain name
+   * firstpaymentamount - optional - Set the first payment amount. No symbol, just xx.xx
+   * recurringamount - optional - Setup fee cost. No symbol, just xx.xx
+   * registrar - optional - Update the registrar assigned to the domain
+   * billingcycle - optional - One of Free Account, One Time, Monthly, Quarterly, Semi-Annually, Annually, Biennially or Triennially
+   * status - optional - One of Active, Pending, Pending Transfer, Expired, Cancelled, Fraud
+   * nextduedate - optional - Update the next due date yyyymmdd
+   * nextinvoicedate - optional - Update the next invoice date yyyymmdd
+   * expirydate - optional - Update the expiry date yyyymmdd
+   * regperiod - optional - Update the reg period for the domain. 1-10
+   * paymentmethod - optional - set the payment method
+   * subscriptionid - optional - allocate a subscription ID
+   * dnsmanagement - optional - enable/disable DNS Management
+   * emailforwarding - optional - enable/disable Email Forwarding
+   * idprotection - optional - enable/disable ID Protection status
+   * donotrenew - optional - enable/disable Do Not Renew
+   * updatens - optional - Set to true to update Nameservers
+   * nsX - optional - X should be 1-5, nameservers to send. Minimum 1&2 required
+   * notes - optional - add custom notes to the addon
+   *
+   * See:
+   *
+   * http://docs.whmcs.com/API:Update_Client_Domain
+   */
+
+  public static function update_client_domain($params = array()) {
+    $params['action'] = 'updateclientdomain';
+    return self::send_request($params);
+  }
+
+  /**
+   * Add cancellation request for a specific product
+   *
+   * Parameters:
+   *
+   * serviceid - Service ID to be cancelled
+   * type - 'Immediate' OR 'End of Billing Period'
+   * reason - Reason for cancel - Optional
+   *
+   * See:
+   *
+   * http://docs.whmcs.com/API:Add_Cancel_Request
+   */
+
+  public static function add_cancel_request($params = array()) {
+    $params['action'] = 'addcancelrequest';
+    return self::send_request($params);
+  }
+
+  /**
+   * Allows you to calculate the cost for an upgrade or downgrade of a product/service, and create an order for it
+   *
+   * Parameters:
+   *
+   * clientid - the client ID to be upgraded
+   * serviceid - the service ID to be upgraded
+   * type - either "product" or "configoptions"
+   * newproductid - if upgrade type = product, the new product ID to upgrade to
+   * newproductbillingcycle - monthly, quarterly, etc...
+   * configoptions[x] - if upgrade type = configoptions, an array of config options
+   * paymentmethod - the payment method for the order (paypal, authorize, etc...)
+   * ordernotes - any admin notes to add to the order (optional)
+   * calconly - set true to just validate upgrade and get price, false to actually create order
+   *
+   * See:
+   *
+   * http://docs.whmcs.com/API:Upgrade_Product
+   */
+
+  public static function upgrade_product($params = array()) {
+    $params['action'] = 'upgradeproduct';
     return self::send_request($params);
   }
 
