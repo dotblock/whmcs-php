@@ -153,6 +153,24 @@ class WHMCS_Invoice extends WHMCS_Base
   }
 
   /**
+   * Apply credit from a clients credit balance to an invoice within WHMCS
+   *
+   * Parameters:
+   *
+   * invoiceid - the ID to apply the credit to
+   * amount - the amount of credit to apply (must be less than or equal to clients available credit balance)
+   *
+   * See:
+   *
+   * http://docs.whmcs.com/API:Apply_Credit
+   */
+
+  public static function apply_credit($params = array()) {
+    $params['action'] = 'applycredit';
+    return self::send_request($params);
+  }
+
+  /**
    * Add a new billable item
    *
    * Parameters:
@@ -217,6 +235,54 @@ class WHMCS_Invoice extends WHMCS_Base
 
   public static function add_transaction($params = array()) {
     $params['action'] = 'addtransaction';
+    return self::send_request($params);
+  }
+
+  /**
+   * Get transactions
+   *
+   * Parameters:
+   *
+   * userid - optional - User ID to obtain details for
+   * invoiceid - optional - Obtain transactions for a specific invoice
+   * transid - optional - Obtain details for a specific transaction ID
+   *
+   * See:
+   *
+   * http://docs.whmcs.com/API:Get_Transactions
+   */
+
+  public static function get_transactions($params = array()) {
+    $params['action'] = 'gettransactions';
+    return self::send_request($params);
+  }
+
+  /**
+   * Update transaction
+   *
+   * Parameters:
+   *
+   * transactionid - The Transaction ID to update
+   * userid - optional - Add Transaction to a user
+   * currency - optional - Currency ID for a transaction
+   * gateway - optional - Gateway to assign transaction to
+   * date - optional - date of transaction YYYYMMDD
+   * description - optional - Description of the transaction
+   * amountin - optional - amount to add to the account
+   * fees - optional - transaction fee you were charged
+   * amountout - optional - if an outgoing enter this
+   * rate - optional - exchange rate based on master currency. Set to 1 if on default currency
+   * transid - optional - Transaction ID you wish to assign
+   * invoiceid - optional - Add transaction to a particular invoice
+   * refundid - optional - Add a refund ID if this is a refund transaction
+   *
+   * See:
+   *
+   * http://docs.whmcs.com/API:Update_Transaction
+   */
+
+  public static function update_transaction($params = array()) {
+    $params['action'] = 'updatetransaction';
     return self::send_request($params);
   }
 
