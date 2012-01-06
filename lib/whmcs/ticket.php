@@ -120,6 +120,23 @@ class WHMCS_Ticket extends WHMCS_Base
   }
 
   /**
+   * Delete an existing ticket
+   *
+   * Parameters:
+   *
+   * ticketid - Ticket ID to be deleted
+   *
+   * See:
+   *
+   * http://docs.whmcs.com/API:Delete_Ticket
+   */
+
+  public static function delete_ticket($params = array()) {
+    $params['action'] = 'deleteticket';
+    return self::send_request($params);
+  }
+
+  /**
    * Add a note to an existing ticket
    *
    * Parameters:
@@ -138,19 +155,36 @@ class WHMCS_Ticket extends WHMCS_Base
   }
 
   /**
-   * Delete an existing ticket
+   * Get ticket notes from a specified ticket
    *
    * Parameters:
    *
-   * ticketid - Ticket ID to be deleted
+   * ticketid - Ticket ID to obtain the notes for
    *
    * See:
    *
-   * http://docs.whmcs.com/API:Delete_Ticket
+   * http://docs.whmcs.com/API:Get_Ticket_Notes
    */
 
-  public static function delete_ticket($params = array()) {
-    $params['action'] = 'deleteticket';
+  public static function get_ticket_notes($params = array()) {
+    $params['action'] = 'getticketnotes';
+    return self::send_request($params);
+  }
+
+  /**
+   * Delete a ticket note from a ticket
+   *
+   * Parameters:
+   *
+   * noteid - Note ID to be removed
+   *
+   * See:
+   *
+   * http://docs.whmcs.com/API:Delete_Ticket_Note
+   */
+
+  public static function delete_ticket_note($params = array()) {
+    $params['action'] = 'deleteticketnote';
     return self::send_request($params);
   }
 
@@ -209,6 +243,82 @@ class WHMCS_Ticket extends WHMCS_Base
 
   public static function get_ticket_predefined_repies($params = array()) {
     $params['action'] = 'getticketpredefinedreplies';
+    return self::send_request($params);
+  }
+
+  /**
+   * Add a new announcement
+   *
+   * Parameters:
+   *
+   * date - Date of the announcement in format yyyymmdd
+   * title - Title of the announcement
+   * announcement - Announcement text
+   * published - true/false
+   *
+   * See:
+   *
+   * http://docs.whmcs.com/API:Add_Announcement
+   */
+
+  public static function add_announcement($params = array()) {
+    $params['action'] = 'addannouncement';
+    return self::send_request($params);
+  }
+
+  /**
+   * Delete an announcement
+   *
+   * Parameters:
+   *
+   * announcementid - The ID of the announcement to delete
+   *
+   * See:
+   *
+   * http://docs.whmcs.com/API:Delete_Announcement
+   */
+
+  public static function delete_announcement($params = array()) {
+    $params['action'] = 'deleteannouncement';
+    return self::send_request($params);
+  }
+
+  /**
+   * Update an announcement
+   *
+   * Parameters:
+   *
+   * announcementid - ID of the announcement to edit
+   * date - Date of the announcement in format yyyymmdd
+   * title - Title of the announcement
+   * announcement - Announcement text
+   * published - true/false
+   *
+   * See:
+   *
+   * http://docs.whmcs.com/API:Update_Announcement
+   */
+
+  public static function update_announcement($params = array()) {
+    $params['action'] = 'updateannouncement';
+    return self::send_request($params);
+  }
+
+  /**
+   * Get a list of the announcements
+   *
+   * Parameters:
+   *
+   * limitstart - optional - used for pagination, start at a certain ID
+   * limitnum - optional - restrict number of records
+   *
+   * See:
+   *
+   * http://docs.whmcs.com/API:Get_Announcements
+   */
+
+  public static function get_announcements($params = array()) {
+    $params['action'] = 'getannouncements';
     return self::send_request($params);
   }
 
