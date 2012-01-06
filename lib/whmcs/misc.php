@@ -91,6 +91,18 @@ class WHMCS_Misc extends WHMCS_Base
   }
 
   /**
+   * Get a list of the client groups
+   *
+   * See:
+   *
+   * http://docs.whmcs.com/API:Get_Client_Groups
+   */
+
+  public static function get_client_groups() {
+    return self::send_request(array('action' => 'getclientgroups'));
+  }
+
+  /**
    * Get email templates
    *
    * Parameters:
@@ -135,6 +147,29 @@ class WHMCS_Misc extends WHMCS_Base
 
   public static function get_todo_item_statuses() {
     return self::send_request(array('action' => 'gettodoitemstatuses'));
+  }
+
+  /**
+   * Update a todo list item
+   *
+   * Parameters:
+   *
+   * itemid - ID of the ToDo in WHMCS to update
+   * adminid - Admin ID to update the To Do item to
+   * date - optional - open date of the To Do YYYYMMDD
+   * title - optional - Title of the to do
+   * description - optional - Text of the To Do
+   * status - optional - Status - New, Pending, In Progress, Completed, Postponed
+   * duedate - optional - due date of the To Do YYYYMMDD
+   *
+   * See:
+   *
+   * http://docs.whmcs.com/API:Update_To-Do_Item
+   */
+
+  public static function update_todo_item($params = array()) {
+    $params['action'] = 'updatetodoitem';
+    return self::send_request($params);
   }
 
   /**
@@ -194,6 +229,102 @@ class WHMCS_Misc extends WHMCS_Base
 
   public static function decrypt_password($params = array()) {
     $params['action'] = 'decryptpassword';
+    return self::send_request($params);
+  }
+
+  /**
+   * Ban an IP address on your system
+   *
+   * Parameters:
+   *
+   * days - number of days to ban for. If not submitted defaults to 7 (not required)
+   * expires - in YYYY-MM-DD HH:II:SS format eg: 2011-06-06 01:12:34
+   * ip - the ip to ban
+   *
+   * See:
+   *
+   * http://docs.whmcs.com/API:Add_Banned_IP
+   */
+
+  public static function add_banned_ip($params = array()) {
+    $params['action'] = 'addbannedip';
+    return self::send_request($params);
+  }
+
+  /**
+   * Create products inside WHMCS
+   *
+   * Parameters:
+   *
+   * type - one of hostingaccount, reselleraccount, server or other
+   * gid - the product group ID to add it to
+   * name - the product name
+   * description - the product description (optional)
+   * hidden - set true to hide
+   * showdomainoptions - set true to show
+   * welcomeemail - the email template ID for a welcome email
+   * qty - set quantity to enable stock control
+   * proratadate - (optional)
+   * proratachargenextmonth - (optional)
+   * paytype - free, onetime or recurring
+   * autosetup - on, payment, order or blank for none
+   * module - module name (if applicable)
+   * servergroupid - server group ID (optional)
+   * subdomain - subdomain to offer with product (optional)
+   * tax - set true to apply tax
+   * order - display sort order to override default
+   * configoption1
+   * configoption2
+   * etc...
+   * pricing - an array of pricing in the format pricing[currencyid][cycle]
+   *
+   * See:
+   *
+   * http://docs.whmcs.com/API:Add_Product
+   */
+
+  public static function add_product($params = array()) {
+    $params['action'] = 'addproduct';
+    return self::send_request($params);
+  }
+
+  /**
+   * Add an item to the activity log
+   *
+   * Parameters:
+   *
+   * description - Text to add to the log
+   * userid - optional - UserID to assign the log to in order to appear in Client Log
+   *
+   * See:
+   *
+   * http://docs.whmcs.com/API:Log_Activity
+   */
+
+  public static function log_activity($params = array()) {
+    $params['action'] = 'logactivity';
+    return self::send_request($params);
+  }
+
+  /**
+   * Send an email to admin users
+   *
+   * Parameters:
+   *
+   * messagename - Name of the Admin email template to send
+   * mergefields - array of merge fields to populate the template being sent
+   * type - Who to send the email to. One of system, account or support. Default: system
+   * customsubject - optional - Subject for a custommessage being sent
+   * custommessage - optional - Send a custom email to admin users, this will override 'messagename'
+   * deptid - optional - If type = support, the users of a department to send email to
+   *
+   * See:
+   *
+   * http://docs.whmcs.com/API:Send_Admin_Email
+   */
+
+  public static function send_admin_email($params = array()) {
+    $params['action'] = 'sendadminemail';
     return self::send_request($params);
   }
 
