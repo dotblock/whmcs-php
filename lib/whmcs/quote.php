@@ -147,6 +147,31 @@ class WHMCS_Quote extends WHMCS_Base
     return self::send_request($params);
   }
 
+  /**
+   * Get quotes
+   *
+   * Parameters:
+   *
+   * quoteid - optional - specific quote to obtain
+   * userid - optional - obtain quotes for a specific user
+   * datecreated - optional - Format YYYYMMDD
+   * lastmodified - optional - Format YYYYMMDD
+   * validuntil - optional - Format YYYYMMDD
+   * stage - optional - Specific stage to retrieve quotes for
+   * subject - optional - to obtain quotes with a specific subject
+   * limitstart - optional - for pagination, specify an ID to start at
+   * limitnum - optional - to restrict the number of results returned
+   *
+   * See:
+   *
+   * http://docs.whmcs.com/API:Get_Quotes
+   */
+
+  public static function get_quote($params = array()) {
+    $params['action'] = 'getquotes';
+    return self::send_request($params);
+  }
+
 }
 
 /* End of file quote.php */
