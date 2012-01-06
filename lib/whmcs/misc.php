@@ -233,7 +233,7 @@ class WHMCS_Misc extends WHMCS_Base
   }
 
   /**
-   * Ban an IP address on your system
+   * Ban an IP address
    *
    * Parameters:
    *

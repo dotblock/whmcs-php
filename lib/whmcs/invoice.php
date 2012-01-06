@@ -153,7 +153,7 @@ class WHMCS_Invoice extends WHMCS_Base
   }
 
   /**
-   * Apply credit from a clients credit balance to an invoice within WHMCS
+   * Apply credit from a clients credit balance to an invoice
    *
    * Parameters:
    *

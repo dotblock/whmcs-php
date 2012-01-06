@@ -611,7 +611,7 @@ class WHMCS_Client extends WHMCS_Base
    *
    * Parameters:
    *
-   * messagename - unique name of the email template to send from WHMCS
+   * messagename - unique name of the email template to send
    * id - related ID number to send message for
    *
    * See:
