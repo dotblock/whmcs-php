@@ -199,10 +199,11 @@ class WHMCS_Client extends WHMCS_Base
    *
    * Parameters:
    *
-   * date - date to obtain emails for. Can be YYYYMMDD, YYYYMM, MMDD, DD or MM
-   * subject - to obtain email with a specific subject
-   * limitstart - for pagination, specify an ID to start at
-   * limitnum - to restrict the number of results returned
+   * clientid - ID of the client to obtain the email list for
+   * date - optional - date to obtain emails for. Can be YYYYMMDD, YYYYMM, MMDD, DD or MM
+   * subject - optional - to obtain email with a specific subject
+   * limitstart - optional - for pagination, specify an ID to start at
+   * limitnum - optional - to restrict the number of results returned
    *
    * See:
    *
