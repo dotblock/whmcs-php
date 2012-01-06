@@ -13,6 +13,81 @@ class WHMCS_Domain extends WHMCS_Base
 {
 
   /**
+   * Sends a register command to the registrar 
+   *
+   * Parameters:
+   *
+   * domainid - Domain ID from WHMCS
+   * domain - The domain name (send domain id *or* domain)
+   *
+   * See:
+   *
+   * http://docs.whmcs.com/API:Register_Domain
+   */
+
+  public static function register_domain($params = array()) {
+    $params['action'] = 'domainregister';
+    return self::send_request($params);
+  }
+
+  /**
+   * Sends a renew command to the registrar 
+   *
+   * Parameters:
+   *
+   * domainid - Domain ID from WHMCS
+   * domain - The domain name (send domain id *or* domain)
+   *
+   * See:
+   *
+   * http://docs.whmcs.com/API:Renew_Domain
+   */
+
+  public static function renew_domain($params = array()) {
+    $params['action'] = 'domainrenew';
+    return self::send_request($params);
+  }
+
+  /**
+   * Sends a transfer command to the registrar 
+   *
+   * Parameters:
+   *
+   * domainid - Domain ID from WHMCS
+   * domain - The domain name (send domain id *or* domain)
+   * eppcode - Optional - The EPP code for the transfer
+   *
+   * See:
+   *
+   * http://docs.whmcs.com/API:Transfer_Domain
+   */
+
+  public static function transfer_domain($params = array()) {
+    $params['action'] = 'domaintrasfer';
+    return self::send_request($params);
+  }
+
+  /**
+   * Sends a release command to the registrar 
+   *
+   * Parameters:
+   *
+   * domainid - Domain ID from WHMCS
+   * domain - The domain name (send domain id *or* domain)
+   * newtag - The new tag for the domain (Tag List)
+   *
+   * See:
+   *
+   * http://docs.whmcs.com/API:Release_Domain
+   * http://www.nominet.org.uk/registrars/becomeregistrar/taglist/
+   */
+
+  public static function release_domain($params = array()) {
+    $params['action'] = 'domainrelease';
+    return self::send_request($params);
+  }
+
+  /**
    * Obtain the lock state of a domain name
    *
    * Parameters:
