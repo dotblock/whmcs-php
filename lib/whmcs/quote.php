@@ -167,7 +167,7 @@ class WHMCS_Quote extends WHMCS_Base
    * http://docs.whmcs.com/API:Get_Quotes
    */
 
-  public static function get_quote($params = array()) {
+  public static function get_quotes($params = array()) {
     $params['action'] = 'getquotes';
     return self::send_request($params);
   }
