@@ -38,7 +38,7 @@ class WHMCS_Base
    */
 
   public static function init($api_url, $api_username, $api_password) {
-    if (empty(self::$api_url) || empty(self::$api_username) || empty(self::$api_password)) {
+    if (empty($api_url) || empty($api_username) || empty($api_password)) {
       trigger_error('Must set WHMCS API url, username, and password settings');
       exit;
     }
