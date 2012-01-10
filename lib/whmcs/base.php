@@ -98,7 +98,7 @@ class WHMCS_Base
    */
 
   public static function parse_response($response) {
-    return json_decode($response);
+    return json_decode(trim($response));
   }
 
 }
