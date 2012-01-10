@@ -87,7 +87,7 @@ class WHMCS_Misc extends WHMCS_Base
    */
 
   public static function get_promotions($params = array()) {
-    return WHMCS_Invoice::get_promotions($params);
+    return WHMCS_Order::get_promotions($params);
   }
 
   /**
