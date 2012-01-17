@@ -613,6 +613,7 @@ class WHMCS_Client extends WHMCS_Base
    *
    * messagename - unique name of the email template to send
    * id - related ID number to send message for
+   * customvars - serialized base64 encoded array of custom variables optional
    *
    * See:
    *
