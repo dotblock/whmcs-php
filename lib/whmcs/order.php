@@ -56,6 +56,9 @@ class WHMCS_Order extends WHMCS_Base
    *
    * Parameters:
    *
+   * id - to get a specific order ID only
+   * userid - to get all orders for a specific client ID
+   * status - to get all orders in a specific status: Pending, Active, Fraud, Cancelled
    * limitstart - The record number to start at (default = 0)
    * limitnum - The number of order records to return (default = 25)
    *
