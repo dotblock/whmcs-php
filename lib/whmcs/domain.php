@@ -165,7 +165,7 @@ class WHMCS_Domain extends WHMCS_Base
    *
    * See:
    *
-   * http://docs.whmcs.com/API:Domain_EPP
+   * http://docs.whmcs.com/API:Toggle_ID_Protect
    */
 
   public static function toggle_id_protect($params = array()) {
