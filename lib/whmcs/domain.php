@@ -156,6 +156,24 @@ class WHMCS_Domain extends WHMCS_Base
   }
 
   /**
+   * Toggle ID protect for a domain name
+   *
+   * Parameters:
+   *
+   * domainid - ID of the domain at the registrar
+   * idprotect - true/false
+   *
+   * See:
+   *
+   * http://docs.whmcs.com/API:Domain_EPP
+   */
+
+  public static function toggle_id_protect($params = array()) {
+    $params['action'] = 'domaintoggleidprotect';
+    return self::send_request($params);
+  }
+
+  /**
    * Update the lock state of a domain name
    *
    * Parameters:
