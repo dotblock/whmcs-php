@@ -191,13 +191,18 @@ class WHMCS_Ticket extends WHMCS_Base
   /**
    * Get support departments
    *
+   * Parameters:
+   *
+   * ignore_dept_assignments - Optional send as true to ignore the departments that the API user is assigned to
+   *
    * See:
    *
    * http://docs.whmcs.com/API:Get_Support_Departments
    */
 
-  public static function get_support_departments() {
-    return self::send_request(array('action' => 'getsupportdepartments'));
+  public static function get_support_departments($params = array()) {
+    $params['action'] = 'getsupportdepartments';
+    return self::send_request($params);
   }
 
   /**
