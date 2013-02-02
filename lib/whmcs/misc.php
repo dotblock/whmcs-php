@@ -329,6 +329,3 @@ class WHMCS_Misc extends WHMCS_Base
   }
 
 }
-
-/* End of file misc.php */
-/* Location: ./lib/whmcs/misc.php */

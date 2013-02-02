@@ -299,6 +299,3 @@ class WHMCS_Invoice extends WHMCS_Base
   }
 
 }
-
-/* End of file invoice.php */
-/* Location: ./lib/whmcs/invoice.php */

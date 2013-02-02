@@ -102,6 +102,3 @@ class WHMCS_Base
   }
 
 }
-
-/* End of file base.php */
-/* Location: ./lib/whmcs/base.php */

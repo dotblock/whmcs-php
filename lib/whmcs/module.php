@@ -117,6 +117,3 @@ class WHMCS_Module extends WHMCS_Base
   }
 
 }
-
-/* End of file module.php */
-/* Location: ./lib/whmcs/module.php */

@@ -249,6 +249,3 @@ class WHMCS_Domain extends WHMCS_Base
   }
   
 }
-
-/* End of file domain.php */
-/* Location: ./lib/whmcs/domain.php */

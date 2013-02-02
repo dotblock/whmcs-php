@@ -328,6 +328,3 @@ class WHMCS_Ticket extends WHMCS_Base
   }
 
 }
-
-/* End of file ticket.php */
-/* Location: ./lib/whmcs/ticket.php */

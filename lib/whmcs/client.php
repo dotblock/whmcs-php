@@ -626,6 +626,3 @@ class WHMCS_Client extends WHMCS_Base
   }
 
 }
-
-/* End of file client.php */
-/* Location: ./lib/whmcs/client.php */

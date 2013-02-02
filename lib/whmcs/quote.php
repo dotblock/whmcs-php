@@ -173,6 +173,3 @@ class WHMCS_Quote extends WHMCS_Base
   }
 
 }
-
-/* End of file quote.php */
-/* Location: ./lib/whmcs/quote.php */

@@ -207,6 +207,3 @@ class WHMCS_Order extends WHMCS_Base
   }
 
 }
-
-/* End of file order.php */
-/* Location: ./lib/whmcs/order.php */
