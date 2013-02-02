@@ -8,7 +8,7 @@
  * @version   v0.0.1
  * @copyright 2011 DotBlock Inc
  */
-class WHMCS_Module extends WHMCS_Base
+class WHMCS_Module extends WHMCS_Api
 {
 	/**
 	 * Run the module create command

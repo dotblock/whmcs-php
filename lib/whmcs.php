@@ -11,7 +11,7 @@
 
 $dir = realpath(dirname(__FILE__));
 
-require_once "{$dir}/whmcs/base.php";
+require_once "{$dir}/whmcs/api.php";
 require_once "{$dir}/whmcs/client.php";
 require_once "{$dir}/whmcs/domain.php";
 require_once "{$dir}/whmcs/invoice.php";

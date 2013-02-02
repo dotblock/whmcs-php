@@ -8,7 +8,7 @@
  * @version   v0.0.1
  * @copyright 2011 DotBlock Inc
  */
-class WHMCS_Base
+class WHMCS_Api
 {
 	/**
 	 * @var The URL to the WHMCS API

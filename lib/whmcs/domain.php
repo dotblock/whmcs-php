@@ -8,7 +8,7 @@
  * @version   v0.0.1
  * @copyright 2011 DotBlock Inc
  */
-class WHMCS_Domain extends WHMCS_Base
+class WHMCS_Domain extends WHMCS_Api
 {
 	/**
 	 * Sends a register command to the registrar 
