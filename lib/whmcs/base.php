@@ -72,8 +72,8 @@ class WHMCS_Base
     }
 
     $params['responsetype'] = 'json';
-    $params['username'] = self::$username;
-    $params['password'] = self::$password;
+    $params['username'] = self::$api_username;
+    $params['password'] = self::$api_password;
 
     $ch = curl_init(self::$api_url);
 
