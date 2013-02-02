@@ -74,30 +74,19 @@ class WHMCS_Base
 		$params['username'] = self::$api_username;
 		$params['password'] = self::$api_password;
 		
-		$ch = curl_init(self::$api_url);
+		$connection = curl_init(self::$api_url);
 		
-		curl_setopt($ch, CURLOPT_POST, 1);
-		curl_setopt($ch, CURLOPT_TIMEOUT, 100);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
+		curl_setopt($connection, CURLOPT_POST, 1);
+		curl_setopt($connection, CURLOPT_TIMEOUT, 100);
+		curl_setopt($connection, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($connection, CURLOPT_POSTFIELDS, $params);
 		
-		$data = curl_exec($ch);
+		$response = curl_exec($connection);
 		
-		curl_close($ch);
+		curl_close($connection);
 		
-		$response = self::parse_response($data);
+		$response = trim($response);
+		$response = json_decode($response);
 		return $response;
-	}
-	
-	/**
-	 * Parses the API response
-	 *
-	 * @param string $response The response from the API request
-	 * 
-	 * @return void
-	 */
-	public static function parse_response($response)
-	{
-		return json_decode(trim($response));
 	}
 }
