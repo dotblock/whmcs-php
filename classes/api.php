@@ -75,10 +75,11 @@ class WHMCS_Api
 		$params['password'] = self::$api_password;
 		
 		$connection = curl_init(self::$api_url);
+		$params = http_build_query($params, null, '&');
 		
-		curl_setopt($connection, CURLOPT_POST, 1);
 		curl_setopt($connection, CURLOPT_TIMEOUT, 30);
-		curl_setopt($connection, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($connection, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($connection, CURLOPT_POST, true);
 		curl_setopt($connection, CURLOPT_POSTFIELDS, $params);
 		
 		$response = curl_exec($connection);
