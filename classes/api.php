@@ -77,7 +77,7 @@ class WHMCS_Api
 		$connection = curl_init(self::$api_url);
 		
 		curl_setopt($connection, CURLOPT_POST, 1);
-		curl_setopt($connection, CURLOPT_TIMEOUT, 100);
+		curl_setopt($connection, CURLOPT_TIMEOUT, 30);
 		curl_setopt($connection, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($connection, CURLOPT_POSTFIELDS, $params);
 		
