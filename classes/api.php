@@ -85,10 +85,13 @@ class WHMCS_Api
 		
 		$response = curl_exec($connection);
 		
+		if ($response === false) {
+			throw new Exception(curl_error($connection), curl_errno($connection));
+		}
+		
 		curl_close($connection);
 		
-		$response = trim($response);
-		$response = json_decode($response);
+		$response = json_decode(trim($response));
 		
 		if ($response == null) {
 			return null;
