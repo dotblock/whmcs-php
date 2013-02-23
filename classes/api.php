@@ -32,13 +32,13 @@ class WHMCS_Api
 	 * @param string $api_username The username for the API to authenticate using
 	 * @param string $api_password The password for the API to authenticate using
 	 *
+	 * @throws Exception
 	 * @return void
 	 */
 	public static function init($api_url, $api_username, $api_password)
 	{
 		if (empty($api_url) || empty($api_username) || empty($api_password)) {
-			trigger_error('Must set WHMCS API url, username, and password settings');
-			exit;
+			throw new Exception('Must set WHMCS API url, username, and password settings.');
 		}
 		
 		self::$api_url = $api_url;
@@ -56,18 +56,17 @@ class WHMCS_Api
 	 *
 	 * @param array $params The parameters to pass to WHMCS
 	 * 
+	 * @throws Exception
 	 * @return mixed
 	 */
 	public static function send_request($params = array())
 	{
 		if (empty(self::$api_url) || empty(self::$api_username) || empty(self::$api_password)) {
-			trigger_error('Must set WHMCS API url, username, and password settings');
-			exit;
+			throw new Exception('Must set WHMCS API url, username, and password settings.');
 		}
 		
 		if (empty($params['action'])) {
-			trigger_error('No API action set');
-			exit;
+			throw new Exception('No API action set.');
 		}
 		
 		$params['responsetype'] = 'json';
