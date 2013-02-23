@@ -88,6 +88,10 @@ class WHMCS_Api
 		$response = trim($response);
 		$response = json_decode($response);
 		
+		if ($response == null) {
+			return null;
+		}
+		
 		if ($response->result == 'error' && $response->message == 'Authentication Failed') {
 			throw new Exception('Unable to authenticate to WHMCS with API credentials.');
 		}
