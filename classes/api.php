@@ -80,6 +80,7 @@ class WHMCS_Api
 		curl_setopt($connection, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($connection, CURLOPT_FAILONERROR, false);
 		curl_setopt($connection, CURLOPT_FOLLOWLOCATION, true);
+		curl_setopt($connection, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($connection, CURLOPT_POST, true);
 		curl_setopt($connection, CURLOPT_POSTFIELDS, $params);
 		
