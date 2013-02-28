@@ -98,7 +98,7 @@ class WHMCS_Api
 			return null;
 		}
 		
-		if ($response->result == 'error' && $response->message == 'Authentication Failed') {
+		if (isset($response->result) && $response->result == 'error' && $response->message == 'Authentication Failed') {
 			throw new Exception('Unable to authenticate to WHMCS with API credentials.');
 		}
 		
