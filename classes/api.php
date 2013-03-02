@@ -84,10 +84,15 @@ class WHMCS_Api
 		curl_setopt($connection, CURLOPT_POST, true);
 		curl_setopt($connection, CURLOPT_POSTFIELDS, $params);
 		
+		// Execute the request to the API.
 		$response = curl_exec($connection);
+		$response_info = curl_getinfo($connection);
 		
 		if ($response === false) {
 			throw new Exception(curl_error($connection), curl_errno($connection));
+		}
+		elseif ($response_info['http_code'] >= 400) {
+			throw new Exception('Unknown error with request.', $response_info['http_code']);
 		}
 		
 		curl_close($connection);
