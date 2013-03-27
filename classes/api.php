@@ -26,16 +26,22 @@ class WHMCS_Api
 	public static $api_password;
 	
 	/**
+	 * @var The access key to use for WHMCS API calls
+	 */
+	public static $api_access_key;
+	
+	/**
 	 * Sets the WHMCS API settings
 	 *
-	 * @param string $api_url      The url to the WHMCS API
-	 * @param string $api_username The username for the API to authenticate using
-	 * @param string $api_password The password for the API to authenticate using
+	 * @param string $api_url        The url to the WHMCS API
+	 * @param string $api_username   The username for the API to authenticate using
+	 * @param string $api_password   The password for the API to authenticate using
+	 * @param string $api_access_key The access key for the API to use
 	 *
 	 * @throws Exception
 	 * @return void
 	 */
-	public static function init($api_url, $api_username, $api_password)
+	public static function init($api_url, $api_username, $api_password, $api_access_key = null)
 	{
 		if (empty($api_url) || empty($api_username) || empty($api_password)) {
 			throw new Exception('Must set WHMCS API url, username, and password settings.');
@@ -44,6 +50,10 @@ class WHMCS_Api
 		self::$api_url = $api_url;
 		self::$api_username = $api_username;
 		self::$api_password = $api_password;
+		
+		if (!empty($api_access_key)) {
+			self::$api_access_key = $api_access_key;
+		}
 	}
 	
 	/**
@@ -72,6 +82,10 @@ class WHMCS_Api
 		$params['responsetype'] = 'json';
 		$params['username'] = self::$api_username;
 		$params['password'] = self::$api_password;
+		
+		if (!empty(self::$api_access_key)) {
+			$params['accesskey'] = self::$api_access_key;
+		}
 		
 		$connection = curl_init(self::$api_url);
 		$params = http_build_query($params, null, '&');
